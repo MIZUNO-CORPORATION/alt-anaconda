@@ -104,7 +104,7 @@ https://qiita.com/kimisyo/items/986802ea52974b92df27
       
       ![git_install_win1](https://user-images.githubusercontent.com/63040751/78861350-8d5f1a00-7a6f-11ea-8fbf-8e168f5fd377.png)
   
-- exeを実行
+    - exeを実行
       以下の通りに進めていけばOK．
       
       ![git_install_win2](https://user-images.githubusercontent.com/63040751/78861353-8e904700-7a6f-11ea-9026-117f57471ed7.png)
@@ -125,10 +125,10 @@ https://qiita.com/kimisyo/items/986802ea52974b92df27
       
     - Gitがインストールできたか確認
   
-  ```bash
-  git version
-  >> git version x.yy.z (Apple Git-nnn)とか出たらOK
-  ```
+    ```bash
+    git version
+    >> git version x.yy.z (Apple Git-nnn)とか出たらOK
+    ```
   
   - Pyenv-winインストール
   
@@ -166,7 +166,7 @@ https://qiita.com/kimisyo/items/986802ea52974b92df27
     ```bash
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
-  echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+    echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
     ```
     
   - Ubuntu
@@ -207,7 +207,7 @@ https://qiita.com/kimisyo/items/986802ea52974b92df27
 
     ```bash
     pyenv install x.x.x
-  ```
+    ```
   
 - プロジェクトディレクトリにコマンドで移動
 
@@ -247,7 +247,7 @@ https://qiita.com/kimisyo/items/986802ea52974b92df27
   プロジェクトディレクトリに先ほどの`{}.txt`をコピペして，以下コマンド実行
   
   ```bash
-pip install -r {}.txt
+  pip install -r {}.txt
   ```
 
   
