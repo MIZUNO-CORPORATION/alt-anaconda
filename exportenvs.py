@@ -17,6 +17,13 @@ print('export yml and txt for all environments')
 for i, e in enumerate(envs):
     sys.stdout.write('\r Exporting {}: {}/{}'.format(e, i+1, len(envs)))
     sys.stdout.flush()
-    #_ = os.system('conda env export -n {0} > {0}.yml'.format(e))
+    _ = os.system('conda env export -n {0} > {0}.yml'.format(e))
+    if os.name == 'nt':# windows
+        with open(e + '.yml', 'r') as f:
+            lines = f.readlines()
+        if not lines[-1].startswith('prefix'):# remove [0m [0m
+            with open(e + '.yml', 'w', encoding='utf-8') as f:
+                f.writelines(lines[:-1])
+
     _ = os.system('conda activate {0} && pip freeze > {0}.txt'.format(e))
 
