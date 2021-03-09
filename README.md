@@ -67,7 +67,14 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
 
 - Unix(Linux or Mac)
 
+  必要なバージョンを[公式サイト](https://docs.conda.io/en/latest/miniconda.html)や[バージョン履歴](https://repo.anaconda.com/miniconda/)から選ぶ
 
+  ```bash
+  sudo /bin/bash ~/miniconda.sh # -p /opt/conda # 場所を指定する場合
+  rm ~/anaconda.sh
+  
+  source ~/.bashrc
+  ```
 
 ### 移行作業
 
