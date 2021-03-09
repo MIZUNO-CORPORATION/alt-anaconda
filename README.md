@@ -20,7 +20,7 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
 
 まず，移行する前に仮想環境上のパッケージ情報を出力させる．
 
-- 面倒な方→プログラムを作りました．（動作保証はしません）
+- 面倒な方→[プログラム](https://github.com/jjjkkkjjj-mizuno/alt-anaconda/blob/master/createminienv.py)を作りました．（動作保証はしません）
 
   →直下に`{env}.yml`と`{env}.txt`が作成されます．
 
@@ -90,7 +90,7 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
   conda env create -f {}.yml
   ```
 
-- ↑が面倒な方→プログラムを作成しました．（例によって，動作保証はしません）
+- ↑が面倒な方→[プログラム](https://github.com/jjjkkkjjj-mizuno/alt-anaconda/blob/master/exportenvs.py)を作成しました．（例によって，動作保証はしません）
 
   ```bash
   python createminienv.py
