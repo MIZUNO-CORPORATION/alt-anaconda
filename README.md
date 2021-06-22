@@ -98,6 +98,22 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
 
 https://qiita.com/kimisyo/items/986802ea52974b92df27
 
+※Pipで`ValueError: check_hostname requires server_hostname`と出る場合（永続化する場合は，以下の変数を登録する必要がある）
+
+- Windows
+
+```
+set HTTP_PROXY=http://user:pass@hostname:port
+```
+
+- Unix
+
+```
+export HTTP_PROXY="http://user:pass@hostname:port"
+```
+
+
+
 ## Pyenv＋Venv+Pip移行方法
 
 ### Pyenvのインストール
