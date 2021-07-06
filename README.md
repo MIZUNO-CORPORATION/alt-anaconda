@@ -181,7 +181,7 @@ export HTTP_PROXY="http://user:pass@hostname:port"
 
   ```bash
   cd ~
-  git clone git://github.com/yyuu/pyenv.git ~/.pyenv
+  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
   ```
   
   - Mac
