@@ -1,5 +1,5 @@
 import subprocess, sys, os
-outputs = subprocess.check_output('conda env list').splitlines()
+outputs = subprocess.check_output('conda env list', shell=True).splitlines()
 startind = outputs.index(b'#')
 
 # get all envs
