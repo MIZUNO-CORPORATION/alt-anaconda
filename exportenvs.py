@@ -12,7 +12,7 @@ for o in outputs[startind+1:]:
     envs += [line.split()[0]]
 
 # remove base
-envs.remove('base')
+#envs.remove('base')
 print('export yml and txt for all environments')
 for i, e in enumerate(envs):
     sys.stdout.write('\r Exporting {}: {}/{}'.format(e, i+1, len(envs)))
@@ -25,5 +25,8 @@ for i, e in enumerate(envs):
             with open(e + '.yml', 'w', encoding='utf-8') as f:
                 f.writelines(lines[:-1])
 
-    _ = os.system('conda activate {0} && pip freeze > {0}.txt'.format(e))
+        _ = os.system('conda activate {0} && pip list --format=freeze > {0}.txt'.format(e))
+    else:
+        _ = os.system('activate {0} && pip list --format=freeze > {0}.txt'.format(e))
+
 

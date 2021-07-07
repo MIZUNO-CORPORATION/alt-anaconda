@@ -39,7 +39,7 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
 
   ```bash
   conda install pip
-  pip freeze > requrements.txt
+  pip list --format=freeze > requirements.txt
   ```
 
 ### Anacondaアンインストール
