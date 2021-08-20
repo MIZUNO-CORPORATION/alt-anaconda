@@ -78,10 +78,13 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
 
 ### 移行作業
 
-- `defaults`チャネルを削除
+Anaconda Promptを起動する．
+
+- `defaults`チャネルを削除し，`conda-forge`チャンネルを追加する．
 
   ```bash
   conda config --remove channels defaults 
+  conda config --add channels conda-forge
   ```
 
 - 先ほど作成した`yml`ファイルから仮想環境を作成
@@ -111,6 +114,76 @@ set HTTP_PROXY=http://user:pass@hostname:port
 ```
 export HTTP_PROXY="http://user:pass@hostname:port"
 ```
+
+### 仮想環境作成
+
+Anaconda Promptを起動する．
+
+- 仮想環境を作成する（`{hoge}`は任意，`x.x`も任意のバージョン）
+
+  ```bash
+  conda create -n {hoge} python=x.x
+  ```
+
+- その仮想環境に入る
+
+  ```bash
+  conda activate {hoge}
+  
+  ## 以下のように左側に(hoge)と表示され，仮想環境に入ったことを表すようになる
+  (hoge) $
+  ```
+
+  - 上記の状態で，必要なライブラリをインストール
+
+    ```bash
+    conda install {package}
+    ```
+
+  - `conda install`が失敗する場合は，`pip`でインストール
+
+    ```bash
+    pip install {package}
+    ```
+
+- 仮想環境から抜ける
+
+  ```bash
+  conda deactivate
+  ```
+
+### Jupyter Notebookを使いたい場合
+
+Anaconda Promptを起動する．
+
+- `base`環境にJupyterをインストールする
+
+  ```bash
+  conda install jupyter notebook
+  ```
+
+- 仮想環境に入って，kernelを追加する
+
+  ```bash
+  conda activate {hoge}
+  
+  #(hoge) $ のようになる
+  conda install notebook ipykernel
+  ipython kernel install --user --display-name {hoge}
+  ```
+
+- **仮想環境に入った状態**で，Jupyterを起動する
+
+  ```bash
+  conda activate {hoge}
+  
+  #(hoge) $ のようになる
+  jupyter notebook
+  ```
+
+  あとは，以下のようにNew > Notebook > {hoge}選べば，その環境でJupyterが使える．
+
+  ![image](https://user-images.githubusercontent.com/63040751/130174245-6910a4aa-8779-4d88-b9f6-41ceb6278928.png)
 
 
 
