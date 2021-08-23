@@ -174,13 +174,15 @@ Anaconda Promptを起動する．
 
 - **(base)の状態**で，Jupyterを起動する
 
+  →(hoge)にJupyterをインストールして，それをアンインストールすると[リンク](https://github.com/conda/conda/issues/8920)のようにcondaが壊れる可能性があるので，注意！
+  
   ```bash
   #(bese) $ の状態で
   jupyter notebook
   ```
-  
-  あとは，以下のようにNew > Notebook > {hoge}選べば，その環境でJupyterが使える．
 
+  あとは，以下のようにNew > Notebook > {hoge}選べば，その環境でJupyterが使える．
+  
   ![image](https://user-images.githubusercontent.com/63040751/130414305-6b1b9996-f0f2-49de-9b8b-934230cfaeab.png)
 
 
