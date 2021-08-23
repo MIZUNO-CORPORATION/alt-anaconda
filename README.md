@@ -172,18 +172,16 @@ Anaconda Promptを起動する．
   ipython kernel install --user --display={hoge} --name={hoge}
   ```
 
-- **仮想環境に入った状態**で，Jupyterを起動する
+- **(base)の状態**で，Jupyterを起動する
 
   ```bash
-  conda activate {hoge}
-  
-  #(hoge) $ のようになる
+  #(bese) $ の状態で
   jupyter notebook
   ```
-
+  
   あとは，以下のようにNew > Notebook > {hoge}選べば，その環境でJupyterが使える．
 
-  ![image](https://user-images.githubusercontent.com/63040751/130174245-6910a4aa-8779-4d88-b9f6-41ceb6278928.png)
+  ![image](https://user-images.githubusercontent.com/63040751/130414305-6b1b9996-f0f2-49de-9b8b-934230cfaeab.png)
 
 
 
