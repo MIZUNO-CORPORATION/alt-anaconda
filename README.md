@@ -169,7 +169,7 @@ Anaconda Promptを起動する．
   
   #(hoge) $ のようになる
   conda install notebook ipykernel
-  ipython kernel install --user --display-name {hoge}
+  ipython kernel install --user --display={hoge} --name={hoge}
   ```
 
 - **仮想環境に入った状態**で，Jupyterを起動する
