@@ -164,12 +164,14 @@ Anaconda Promptを起動する．
 
 - 仮想環境に入って，kernelを追加する
 
+  ※[公式ドキュメント](https://ipython.readthedocs.io/en/stable/install/kernel_install.html)によると，`--name`ははjupyterの内部で処理する用の名前で，仮に同じnameが既にあった場合は上書きされる．`--display-name`は，jupyterに表示される名前で，重複があっても表示される．
+
   ```bash
   conda activate {hoge}
   
   #(hoge) $ のようになる
   conda install notebook ipykernel
-  ipython kernel install --user --display={hoge} --name={hoge}
+  ipython kernel install --user --display-name={hoge} --name={hoge}
   ```
 
 - **(base)の状態**で，Jupyterを起動する
