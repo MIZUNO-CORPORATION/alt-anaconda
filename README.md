@@ -20,15 +20,17 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
 
 まず，移行する前に仮想環境上のパッケージ情報を出力させる．
 
-- 面倒な方→[プログラム](https://github.com/jjjkkkjjj-mizuno/alt-anaconda/blob/master/createminienv.py)を作りました．（動作保証はしません）
+- 面倒な方→すべてのAnacondaの仮想環境情報を`.yml`，`.txt`に出力する[プログラム](https://github.com/jjjkkkjjj-mizuno/alt-anaconda/blob/master/createcondaenv.py)を作りました．（動作保証はしません）
 
   →直下に`{env}.yml`と`{env}.txt`が作成されます．
 
   ```bash
-  python exportenv.py
+  python exportenvs.py
   ```
 
 - Miniconda+Pip用
+
+  Anacondaの1つの仮想環境情報を`.yml`ファイルに出力
 
   ```bash
   conda activate {hoge}
@@ -37,7 +39,10 @@ Anacondaの商用利用が有償化された（2020/04/10現在）．以下[Anac
 
 - Pyenv+Pip用
 
+  Anacondaの1つの仮想環境情報を`.yml`ファイルに出力
+  
   ```bash
+  conda activate {hoge}
   conda install pip
   pip list --format=freeze > requirements.txt
   ```
@@ -93,27 +98,50 @@ Anaconda Promptを起動する．
   conda env create -f {}.yml
   ```
 
-- ↑が面倒な方→[プログラム](https://github.com/jjjkkkjjj-mizuno/alt-anaconda/blob/master/exportenvs.py)を作成しました．（例によって，動作保証はしません）
+- ↑が面倒な方→直下にある**すべての**`.yml`ファイルからMinicondaの仮想環境を作成する[プログラム](https://github.com/jjjkkkjjj-mizuno/alt-anaconda/blob/master/exportenvs.py)を作成しました．（例によって，動作保証はしません）
 
   ```bash
-  python createminienv.py
+  python createcondaenv.py
   ```
 
 https://qiita.com/kimisyo/items/986802ea52974b92df27
 
 ※Pipで`ValueError: check_hostname requires server_hostname`と出る場合（永続化する場合は，以下の変数を登録する必要がある）
 
-- Windows
+- 一時的な設定の場合
 
-```
-set HTTP_PROXY=http://user:pass@hostname:port
-```
+  - Windows
 
-- Unix
+    ```
+    set HTTP_PROXY=http://user:pass@hostname:port
+    ```
 
-```
-export HTTP_PROXY="http://user:pass@hostname:port"
-```
+  - Unix
+
+    ```
+    export HTTP_PROXY="http://user:pass@hostname:port"
+    ```
+
+- 永続的な設定を行う場合
+
+  - Windowsの場合
+
+    ![image](https://user-images.githubusercontent.com/16914891/130914099-a90bfd36-4f3e-4c69-997b-91250c1804b7.png)
+
+    ![image](https://user-images.githubusercontent.com/16914891/130914093-439c4302-efa8-4744-a05e-8e5e09bcde7c.png)
+    
+    ![image](https://user-images.githubusercontent.com/16914891/130914096-4454104d-aa56-4f1d-b11c-43c50018e510.png)
+    
+  - Unix
+  
+    ```bash
+    vi ~/.bashrc
+    
+    #　以下追記
+    export HTTP_PROXY="http://user:pass@hostname:port"
+    
+    source ~/.bashrc
+    ```
 
 ### 仮想環境作成
 
